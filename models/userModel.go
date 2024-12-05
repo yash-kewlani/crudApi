@@ -14,6 +14,11 @@ type RegisterUserRequest struct {
 	Email     string `json:"email" validate:"required,min=3,max=16"`
 }
 
+type LoginUserPayload struct {
+	Email    string `json:"email" validate:"required"`
+	Password string `json:"password" validate:"required"`
+}
+
 type User struct {
 	ID        int       `json:"id"`
 	FirstName string    `json:"firstName"`
