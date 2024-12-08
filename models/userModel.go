@@ -10,11 +10,11 @@ type UserStore interface {
 type RegisterUserRequest struct {
 	FirstName string `json:"firstName" validate:"required"`
 	LastName  string `json:"lastName" validate:"required"`
-	Password  string `json:"password" validate:"required,email"`
-	Email     string `json:"email" validate:"required,min=3,max=16"`
+	Password  string `json:"password" validate:"required,min=3,max=16"`
+	Email     string `json:"email" validate:"required,email"`
 }
 
-type LoginUserPayload struct {
+type LoginUserRequest struct {
 	Email    string `json:"email" validate:"required"`
 	Password string `json:"password" validate:"required"`
 }
